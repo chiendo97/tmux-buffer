@@ -3,7 +3,7 @@
 CURRENT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # Default key binding
-default_key_binding="B"
+default_key_binding="b"
 
 tmux_option_or_default() {
     local option=$1
@@ -28,7 +28,7 @@ key_binding=$(tmux_option_or_default "@buffex-key" "$default_key_binding")
 main() {
     local key_binding=$(tmux_option_or_default "@buffex-key" "$default_key_binding")
     tmux bind-key "$key_binding" run-shell "$CURRENT_DIR/buffex.sh"
-    
+
     # Debug output
     echo "Tmux Buffex plugin loaded"
     echo "Key binding set to: $key_binding"
